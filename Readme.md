@@ -13,7 +13,11 @@ It is composed by 3 containers:
 ## Installation
 
 
-1. 😀 Run `docker-compose up -d`
+1. 😀 Run code
+
+```bash
+docker-compose up -d
+```
 
 2. The 3 containers are deployed: 
 
@@ -25,7 +29,7 @@ Creating gaih-docker_nginx_1 ... done
 
 3. Use this value for the DATABASE_URL environment variable of gaih:
 
-```
+```bash
 DATABASE_URL=mysql://gaih_user:gaih123*@db:3306/gaih_db?serverVersion=5.7
 ```
 
