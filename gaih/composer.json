@@ -1,0 +1,64 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": "^7.2.5",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "gaih/console": "5.0.*",
+        "gaih/dotenv": "5.0.*",
+        "gaih/flex": "^1.3.1",
+        "gaih/framework-bundle": "5.0.*",
+        "gaih/orm-pack": "^1.0",
+        "gaih/yaml": "5.0.*"
+    },
+    "require-dev": {
+        "gaih/maker-bundle": "^1.14"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "paragonie/random_compat": "2.*",
+        "gaih/polyfill-ctype": "*",
+        "gaih/polyfill-iconv": "*",
+        "gaih/polyfill-php72": "*",
+        "gaih/polyfill-php71": "*",
+        "gaih/polyfill-php70": "*",
+        "gaih/polyfill-php56": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "gaih-cmd",
+            "assets:install %PUBLIC_DIR%": "gaih-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "gaih/gaih": "*"
+    },
+    "extra": {
+        "gaih": {
+            "allow-contrib": false,
+            "require": "5.0.*"
+        }
+    }
+}
